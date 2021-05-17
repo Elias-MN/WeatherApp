@@ -1,0 +1,152 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	color: #6b6b6b;
+}
+
+/*Esto permite crear variables globales*/
+:root{
+	--AzulMarino: #404376;
+	--AzulCobalto: #110d42;
+	--AzulClaroCyan: #E0FFFF;
+	--AzulClaroCielo: #87CEFA;
+	--AmarilloOro: #FFD700;
+	--AmarilloAmbar: #FAFAD2;
+}
+
+/*Con var(nombreVariable) asignamos el valor*/
+.parte-izquierda, .pronostico-dia, .datos-atmosfericos-dato{
+	background: var(--AzulClaroCyan);
+}
+
+.parte-derecha{
+	background: var(--AzulClaroCielo);
+}
+	
+#contenedor{
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+}
+
+	.parte-izquierda{
+		width: 30%;
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
+
+		.dia-actual{
+			display: flex;
+		    flex-direction: column;
+		    align-content: center;
+		    align-items: center;
+		    margin: 10px;
+		    text-align: center;
+		}
+
+			#img-dia-actual{
+				width: 80%;
+			}
+
+			#temperatura-dia-actual{
+				font-size: 100px;
+    			margin-top: 15px;
+    			margin-bottom: 15px;
+			}
+
+			#estado-nombre{
+   	 			margin: 15px 0;
+			}
+
+			#ciudad{
+			   margin: 25px 0;
+			}
+
+	.parte-derecha{
+		width: 70%;
+		display: flex;
+	    flex-wrap: wrap;
+	    align-content: space-around;
+	    justify-content: center;
+	    padding: 10px;
+	}
+
+		.pronostico, .datos-atmosfericos{
+			width: 80%;
+	   		margin: 10px;
+	   		display: flex;
+			flex-direction: row;
+			justify-content: center;
+    		align-items: center;
+		}
+
+		.pronostico{
+			height: 200px;
+		}
+
+			.pronostico-dia{
+				width: 30%;
+			    height: 90%;
+			    margin: 5px;
+			    text-align: center;
+			}
+
+				.img-dia{
+					margin: 25px 0 20px 0;
+    				width: 65px;
+				}
+
+		.datos-atmosfericos{
+			height: 300px;
+		}
+
+		.datos-atmosfericos-dato{
+			width: 50%;
+		    height: 90%;
+		    margin: 10px;
+		    text-align: center;
+		    display: flex;
+		    align-content: center;
+		    justify-content: center;
+		    flex-direction: column;
+		}
+
+	#viento, #viento-dia, #humedad, #humedad-dia{
+		font-size: 50px;
+	}	
+
+/* Media queries */
+@media (max-width: 750px){
+	#contenedor{
+		flex-direction: column;
+	}
+
+	.parte-izquierda, .parte-derecha{
+		width: 100%;
+	}
+
+		.pronostico, .datos-atmosfericos{
+			flex-direction: column;
+			height: auto;
+		}
+
+			.pronostico-dia, .datos-atmosfericos-dato{
+				width: 80%;
+    			height: 150px;    			
+			}
+
+			#img-dia-actual{
+				width: 50%;
+			}
+
+	.img-dia{
+		margin: 5% 0 2.5% 0;
+	}
+
+	#viento, #viento-dia, #humedad, #humedad-dia{
+		font-size: 30px;
+	}	
+
+}    
